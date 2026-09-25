@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal portfolio of Nzioka Kyalo — Aspiring Web Developer & IT Student at KCA University.">
+    <title>Nzioka Kyalo — Personal Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <header>
+        <nav class="navbar" aria-label="Main navigation">
+            <a href="#hero" class="nav-logo">Nzioka<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#hero" class="active">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ===== HERO SECTION ===== -->
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <p class="hero-greeting">Hello, I'm</p>
+                <h1 class="hero-name">Nzioka Kyalo</h1>
+                <p class="hero-tagline">Aspiring Web Developer &amp; IT Student</p>
+                <a href="#contact" class="btn btn-primary">Get in Touch</a>
+            </div>
+            <div class="hero-image">
+                <!-- Replace src with your actual compressed photo (a few hundred KB) -->
+                <img src="photo.jpg" alt="Professional headshot of Nzioka Kyalo" width="320" height="320">
+            </div>
+        </section>
+
+        <!-- ===== ABOUT ME SECTION ===== -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <p class="about-text">
+                    I am a passionate Information Technology student at KCA University, currently building my
+                    foundation in web technologies, programming, and software development. I enjoy turning ideas
+                    into clean, functional websites and am eager to grow my skills in front-end and back-end
+                    development. Outside of academics, I'm interested in open-source projects, tech communities,
+                    and continuously learning new tools that shape the digital world.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== PROJECTS SECTION (placeholder for Assignment 2) ===== -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <p class="projects-note">
+                    My projects section is coming soon — it will be built in Assignment 2. Stay tuned!
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== CONTACT / FOOTER ===== -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <h2 class="section-title footer-title">Contact</h2>
+            <p class="footer-intro">
+                I'd love to hear from you. Feel free to reach out through any of the channels below.
+            </p>
+            <ul class="contact-list">
+                <li>
+                    <a href="mailto:kyalosannie@gmail.com">
+                        <span class="contact-icon" aria-hidden="true">&#9993;</span>
+                        kyalosannie@gmail.com
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/sannienkn-cmd" target="_blank" rel="noopener noreferrer">
+                        <span class="contact-icon" aria-hidden="true">&#128187;</span>
+                        GitHub — @sannienkn-cmd
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/sannie-kyalo-b8bb923b1/" target="_blank" rel="noopener noreferrer">
+                        <span class="contact-icon" aria-hidden="true">&#128101;</span>
+                        LinkedIn — Nzioka Kyalo
+                    </a>
+                </li>
+            </ul>
+            <p class="footer-copy">&copy; 2026 Nzioka Kyalo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple mobile nav toggle — no external JS library needed
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        navToggle.addEventListener('click', () => {
+            const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', !expanded);
+            navLinks.classList.toggle('open');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
+
+</body>
+</html>
