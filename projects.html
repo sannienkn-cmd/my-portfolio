@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <!-- NAVIGATION (Same as Index) -->
+    <!-- NAVIGATION -->
     <header>
         <nav class="navbar" aria-label="Main navigation">
             <a href="index.html" class="nav-logo">Nzioka<span>.</span></a>
@@ -93,8 +93,7 @@
                     <!-- Project 1 -->
                     <article class="project-card" data-category="web">
                         <div class="project-image">
-                            <!-- Placeholder image from Unsplash -->
-                            <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Portfolio Website Screenshot">
+                            <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Portfolio Website Screenshot" loading="lazy">
                         </div>
                         <div class="project-content">
                             <h3>Personal Portfolio</h3>
@@ -107,7 +106,7 @@
                     <!-- Project 2 -->
                     <article class="project-card" data-category="app">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Code on screen">
+                            <img src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Code on screen" loading="lazy">
                         </div>
                         <div class="project-content">
                             <h3>Task Manager App</h3>
@@ -120,7 +119,7 @@
                     <!-- Project 3 -->
                     <article class="project-card" data-category="data">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Data analysis chart">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Data analysis chart" loading="lazy">
                         </div>
                         <div class="project-content">
                             <h3>Student Grade Calculator</h3>
@@ -129,6 +128,31 @@
                             <a href="#" class="btn-link">View Code &rarr;</a>
                         </div>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- LIVE API SECTION (Now correctly placed outside the grid) -->
+        <section class="projects-section" style="background-color: var(--color-bg);">
+            <div class="container">
+                <h2 class="section-title">Latest GitHub Repositories (Live Data)</h2>
+                <p style="margin-bottom: 2rem; color: var(--color-text-light);">
+                    This section fetches real-time data from the GitHub API.
+                </p>
+                
+                <!-- Loading State -->
+                <div id="loading-state" style="text-align: center; padding: 2rem; font-weight: bold; color: var(--color-accent);">
+                    Loading repositories...
+                </div>
+
+                <!-- Error State -->
+                <div id="error-state" style="text-align: center; padding: 2rem; color: red; display: none;">
+                    Failed to load repositories. Please check your connection.
+                </div>
+
+                <!-- API Data Container -->
+                <div id="api-repos-container" class="project-grid" style="display: none;">
+                    <!-- JavaScript will inject cards here safely -->
                 </div>
             </div>
         </section>
@@ -165,7 +189,7 @@
         </section>
     </main>
 
-    <!-- FOOTER (Same as Index) -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <ul class="contact-list">

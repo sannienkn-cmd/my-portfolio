@@ -104,3 +104,69 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+// ==========================================
+// ASSIGNMENT 3: LIVE API INTEGRATION
+// ==========================================
+
+async function loadGitHubRepos() {
+    const container = document.getElementById('api-repos-container');
+    const loadingState = document.getElementById('loading-state');
+    const errorState = document.getElementById('error-state');
+
+    // Only run this code if we are on the projects page
+    if (!container) return;
+
+    try {
+        // 1. Fetch data
+        const response = await fetch('https://api.github.com/users/sannienkn-cmd/repos?sort=updated&per_page=6');
+        
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+
+        const repos = await response.json();
+
+        // 2. Hide loading, show container
+        loadingState.style.display = 'none';
+        container.style.display = 'grid'; // Use grid to match your CSS
+
+        // 3. Render data safely
+        repos.forEach(repo => {
+            // Create elements safely (Security Requirement)
+            const card = document.createElement('article');
+            card.className = 'project-card';
+
+            const content = document.createElement('div');
+            content.className = 'project-content';
+
+            const title = document.createElement('h3');
+            title.textContent = repo.name; // SAFE: uses textContent, not innerHTML
+
+            const desc = document.createElement('p');
+            desc.textContent = repo.description || 'No description available.'; // SAFE
+
+            const link = document.createElement('a');
+            link.href = repo.html_url;
+            link.textContent = 'View Code →';
+            link.className = 'btn-link';
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer'; // Security best practice for external links
+
+            // Assemble the card
+            content.appendChild(title);
+            content.appendChild(desc);
+            content.appendChild(link);
+            card.appendChild(content);
+            container.appendChild(card);
+        });
+
+    } catch (error) {
+        // 4. Handle Error
+        console.error('API Error:', error);
+        loadingState.style.display = 'none';
+        errorState.style.display = 'block';
+    }
+}
+
+// Run the function when the page loads
+document.addEventListener('DOMContentLoaded', loadGitHubRepos);
