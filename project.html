@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects & Skills — Nzioka Kyalo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVIGATION (Same as Index) -->
+    <header>
+        <nav class="navbar" aria-label="Main navigation">
+            <a href="index.html" class="nav-logo">Nzioka<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- PAGE HEADER -->
+        <section class="page-header">
+            <div class="container">
+                <h1>My Work & Skills</h1>
+                <p>A collection of my projects, technical skills, and services.</p>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section class="skills-section">
+            <div class="container">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>HTML5 & CSS3</h3>
+                        <p>Building semantic, responsive layouts.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>JavaScript</h3>
+                        <p>DOM manipulation and interactivity.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Git & GitHub</h3>
+                        <p>Version control and deployment.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Python</h3>
+                        <p>Basic scripting and data logic.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>UI/UX Design</h3>
+                        <p>Creating user-friendly interfaces.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section class="services-section">
+            <div class="container">
+                <h2 class="section-title">What I Can Offer</h2>
+                <ul class="services-list">
+                    <li><strong>Basic Website Design:</strong> Creating clean, responsive landing pages for small businesses or personal use.</li>
+                    <li><strong>IT Tutoring:</strong> Helping fellow students understand web fundamentals and coding logic.</li>
+                    <li><strong>Tech Support:</strong> Troubleshooting basic hardware and software issues.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION WITH FILTERING -->
+        <section class="projects-section">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                
+                <!-- Filter Buttons -->
+                <div class="filter-container">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="web">Web Design</button>
+                    <button class="filter-btn" data-filter="app">Applications</button>
+                    <button class="filter-btn" data-filter="data">Data/Backend</button>
+                </div>
+
+                <div class="project-grid">
+                    <!-- Project 1 -->
+                    <article class="project-card" data-category="web">
+                        <div class="project-image">
+                            <!-- Placeholder image from Unsplash -->
+                            <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Portfolio Website Screenshot">
+                        </div>
+                        <div class="project-content">
+                            <h3>Personal Portfolio</h3>
+                            <span class="project-tag">Web Design</span>
+                            <p>A responsive personal portfolio website built with semantic HTML5 and CSS3. Features a mobile-first design and smooth scrolling.</p>
+                            <a href="https://sannienkn-cmd.github.io/my-portfolio/" target="_blank" class="btn-link">View Live &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project-card" data-category="app">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Code on screen">
+                        </div>
+                        <div class="project-content">
+                            <h3>Task Manager App</h3>
+                            <span class="project-tag">JavaScript</span>
+                            <p>A dynamic to-do list application allowing users to add, delete, and mark tasks as complete. Uses LocalStorage to save data.</p>
+                            <a href="#" class="btn-link">View Code &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="project-card" data-category="data">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Data analysis chart">
+                        </div>
+                        <div class="project-content">
+                            <h3>Student Grade Calculator</h3>
+                            <span class="project-tag">Python/Logic</span>
+                            <p>A script that takes input scores, calculates averages, and assigns letter grades based on a standard grading scale.</p>
+                            <a href="#" class="btn-link">View Code &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT FORM SECTION -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="contact-intro">Have a question or want to work together? Send me a message.</p>
+                
+                <form id="contactForm" class="contact-form" novalidate>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name">
+                        <span class="error-message" id="nameError">Please enter your name.</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com">
+                        <span class="error-message" id="emailError">Please enter a valid email address.</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="How can I help you?"></textarea>
+                        <span class="error-message" id="messageError">Please enter a message.</span>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <p class="form-status" id="formStatus"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER (Same as Index) -->
+    <footer class="footer">
+        <div class="container">
+            <ul class="contact-list">
+                <li><a href="mailto:kyalosannie@gmail.com">kyalosannie@gmail.com</a></li>
+                <li><a href="https://github.com/sannienkn-cmd" target="_blank">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/sannie-kyalo-b8bb923b1/" target="_blank">LinkedIn</a></li>
+            </ul>
+            <p class="footer-copy">&copy; 2026 Nzioka Kyalo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

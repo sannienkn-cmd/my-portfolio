@@ -18,7 +18,7 @@
             <a href="#hero" class="nav-logo">Nzioka<span>.</span></a>
             <ul class="nav-links">
                 <li><a href="#hero" class="active">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="projects.html">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -100,25 +100,7 @@
         </div>
     </footer>
 
-    <script>
-        // Simple mobile nav toggle — no external JS library needed
-        const navToggle = document.querySelector('.nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        navToggle.addEventListener('click', () => {
-            const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-            navToggle.setAttribute('aria-expanded', !expanded);
-            navLinks.classList.toggle('open');
-        });
-
-        // Close menu when a link is clicked
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('open');
-                navToggle.setAttribute('aria-expanded', 'false');
-            });
-        });
-    </script>
+    <script src="script.js" defer></script>
 
 </body>
 </html>
